@@ -7,24 +7,34 @@ import * as L from 'leaflet';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit, OnChanges, AfterViewInit {
-  Longitude: number = 0;
-  Latitude: number = 0;
+  Longitude : number = 0;
+  Latitude : number = 0;
+  vakue : boolean = false;
   Center: number[] = [this.Longitude, this.Latitude];
+  search:boolean = false
 
   public map;
-
-
+  mappp
 
   public Onclick() {
-    // console.log("Button Clicked");
-    // console.log(this.Latitude);
-    this.map.remove()
-    this.Center = [this.Latitude, this.Longitude];
+
+    if(this.map != null )  {
+      //  this.map._leaflet_id = null
+    this.map.remove();
+
+    }
+
+    this.search = true; //not equal to condition
+      this.Center = [this.Latitude, this.Longitude];
 
     console.log("Long = ",this.Center[0], "Lat = ", this.Center[1]);
 
     this.initMap();
+
+
   }
+
+
 
 
   public initMap(): void {
@@ -32,6 +42,7 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
       center: [this.Center[0], this.Center[1]],
       zoom: 10,
     });
+
 
 
 
@@ -48,6 +59,10 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
     );
 
 
+
+
+
+
     L.marker([this.Center[0], this.Center[1]]).addTo(this.map);
     tiles.addTo(this.map);
   }
@@ -56,7 +71,7 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngOnInit(): void {
 
-    this.initMap()
+this.initMap();
   }
 
   ngOnChanges(): void {

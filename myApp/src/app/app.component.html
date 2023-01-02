@@ -1,13 +1,11 @@
+<app-nav></app-nav>
+
 <div class="body">
 
 <div class="mainHeader">
   <h1 class="main-title" >Angular Search Location - Leaflet</h1>
 </div>
-<div class="map-container">
-  <div class="map-frame">
-    <div id="showMap"></div>
-  </div>
-</div>
+
 <div class="searchLongLat">
   <form class="example-form">
     <div>
@@ -23,13 +21,22 @@
     <input matInput placeholder="-98.5795" [(ngModel)]="Longitude" [ngModelOptions]="{standalone: true}" />
   </mat-form-field>
   </div>
-    <button mat-flat-button color="primary" type="button" (click)="Onclick()" clickable>Basic</button>
+    <button mat-flat-button color="primary" type="button" (click)="Onclick()" clickable>Search</button>
 
   </form>
 </div>
 
+<!-- <div *ngIf="search"> -->
+
+<div class="map-container" >
+  <div class="map-frame" >
+    <div id="showMap"  ></div>
+  </div>
+<!-- </div> -->
+</div>
+
 <br />
-<div>
+<div >
   Long -     {{ Longitude }}
   <br/>
   Lat - {{Latitude}}
