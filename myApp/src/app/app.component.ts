@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, OnChanges, AfterViewInit {
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
         maxZoom: 25,
-        minZoom: 3,
+        minZoom: 15,
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }
